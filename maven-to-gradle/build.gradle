@@ -1,0 +1,61 @@
+import java.util.*;
+
+defaultTasks  'hello2'
+
+task hello1 << {
+ println 'Hello1'
+}
+
+
+task hello2 << {
+ println 'Hello2'
+ 
+    //java code
+    for(int i=0; i<10; i++){
+       Date now = new Date();
+       System.out.println(now);
+    }
+    
+}
+
+ 
+hello2.doFirst {
+  println 'Starting ...'
+}
+
+hello2.doLast {
+  println 'Finishing ...'
+}
+ 
+
+// add dependency
+dependencies {
+	hello2.dependsOn 'hello1'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
